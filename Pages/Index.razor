@@ -1,5 +1,6 @@
 ﻿@page "/"
 @inject NavigationManager NavigationManager
+@inject AppDbContext _context
 
 <div class="random-video">
     @if (randomVideo is Show)
@@ -94,3 +95,51 @@
         </div>
     </div>
 }
+
+@code {
+    public string titulo { get; set; }
+    public Video randomVideo { get; set; }
+    public List<Video> videos { get; set; }
+    public List<(string TagName, List<Video> Content)> contentByTags { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        // Your C# code goes here...
+        // Retrieve all tags from the database
+        var allTags = _context.Tags.ToList();
+
+        // Get a random sample of tags (up to the number of available tags)
+        var randomTags = allTags.OrderBy(x => Guid.NewGuid()).Take(Math.Min(5, allTags.Count)).ToList();
+
+        // Initialize an empty list to store videos and shows for each tag
+        contentByTags = new List<(string TagName, List<Video> Content)>();
+
+        foreach (var tag in randomTags)
+        {
+            // Retrieve all videos and shows for the current tag
+            var tagVideos = _context.Videos.Where(v => v.Tags.Contains(tag)).ToList();
+
+            if (tagVideos.Any())
+            {
+                // Get a random sample of videos and shows (up to the number of available videos and shows for this tag)
+                var tagContentSample = tagVideos.OrderBy(x => Guid.NewGuid()).Take(Math.Min(9, tagVideos.Count)).ToList();
+
+                contentByTags.Add((tag.Name, tagContentSample));
+            }
+        }
+
+        // Retrieve all videos and shows from the database
+        var allVideos = _context.Videos.ToList();
+
+        // Get a random sample of videos and shows (up to the number of available videos and shows)
+        videos = allVideos.OrderBy(x => Guid.NewGuid()).Take(Math.Min(9, allVideos.Count)).ToList();
+
+        // Select a random video or show from the list
+        randomVideo = allVideos.OrderBy(x => Guid.NewGuid()).FirstOrDefault();
+
+        titulo = "Em Destaque";
+    }
+}
+

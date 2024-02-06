@@ -16,7 +16,7 @@ public class Video
 {
     public int Id { get; set; }
     public string Title { get; set; }
-    public int ChannelId { get; set; }  // Foreign key
+    public int Channel_id { get; set; }  // Foreign key
     public string Url { get; set; }
     public string Thumbnail { get; set; }
     public string Wallpaper { get; set; }
@@ -74,7 +74,7 @@ public class Episode
 {
     public int Id { get; set; }
     public string Title { get; set; }
-    public int ShowId { get; set; }  // Foreign key
+    public int Show_id { get; set; }  // Foreign key
     public int Season { get; set; }
     public string Url { get; set; }
     public string Thumbnail { get; set; }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Deepflix")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10913be986fdbb7b0ea9818bd2e203fc259fccb3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Deepflix")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Deepflix")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

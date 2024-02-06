@@ -12,7 +12,7 @@ namespace Deepflix.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Channels",
+                name: "meu_aplicativo_channel",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -21,28 +21,28 @@ namespace Deepflix.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Channels", x => x.Id);
+                    table.PrimaryKey("PK_meu_aplicativo_channel", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Episodes",
+                name: "meu_aplicativo_episode",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Title = table.Column<string>(type: "TEXT", nullable: false),
-                    ShowId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Show_id = table.Column<int>(type: "INTEGER", nullable: false),
                     Season = table.Column<int>(type: "INTEGER", nullable: false),
                     Url = table.Column<string>(type: "TEXT", nullable: false),
                     Thumbnail = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Episodes", x => x.Id);
+                    table.PrimaryKey("PK_meu_aplicativo_episode", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Shows",
+                name: "meu_aplicativo_show",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -56,17 +56,17 @@ namespace Deepflix.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Shows", x => x.Id);
+                    table.PrimaryKey("PK_meu_aplicativo_show", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Videos",
+                name: "meu_aplicativo_video",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Title = table.Column<string>(type: "TEXT", nullable: false),
-                    ChannelId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Channel_id = table.Column<int>(type: "INTEGER", nullable: false),
                     Url = table.Column<string>(type: "TEXT", nullable: false),
                     Thumbnail = table.Column<string>(type: "TEXT", nullable: false),
                     Wallpaper = table.Column<string>(type: "TEXT", nullable: false),
@@ -77,11 +77,11 @@ namespace Deepflix.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Videos", x => x.Id);
+                    table.PrimaryKey("PK_meu_aplicativo_video", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tags",
+                name: "meu_aplicativo_tag",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -92,27 +92,27 @@ namespace Deepflix.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tags", x => x.Id);
+                    table.PrimaryKey("PK_meu_aplicativo_tag", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tags_Shows_ShowId",
+                        name: "FK_meu_aplicativo_tag_meu_aplicativo_show_ShowId",
                         column: x => x.ShowId,
-                        principalTable: "Shows",
+                        principalTable: "meu_aplicativo_show",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Tags_Videos_VideoId",
+                        name: "FK_meu_aplicativo_tag_meu_aplicativo_video_VideoId",
                         column: x => x.VideoId,
-                        principalTable: "Videos",
+                        principalTable: "meu_aplicativo_video",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tags_ShowId",
-                table: "Tags",
+                name: "IX_meu_aplicativo_tag_ShowId",
+                table: "meu_aplicativo_tag",
                 column: "ShowId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tags_VideoId",
-                table: "Tags",
+                name: "IX_meu_aplicativo_tag_VideoId",
+                table: "meu_aplicativo_tag",
                 column: "VideoId");
         }
 
@@ -120,19 +120,19 @@ namespace Deepflix.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Channels");
+                name: "meu_aplicativo_channel");
 
             migrationBuilder.DropTable(
-                name: "Episodes");
+                name: "meu_aplicativo_episode");
 
             migrationBuilder.DropTable(
-                name: "Tags");
+                name: "meu_aplicativo_tag");
 
             migrationBuilder.DropTable(
-                name: "Shows");
+                name: "meu_aplicativo_show");
 
             migrationBuilder.DropTable(
-                name: "Videos");
+                name: "meu_aplicativo_video");
         }
     }
 }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Deepflix.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240206134824_InitialCreate")]
+    [Migration("20240206180647_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -31,7 +31,7 @@ namespace Deepflix.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Channels");
+                    b.ToTable("meu_aplicativo_channel", (string)null);
                 });
 
             modelBuilder.Entity("Episode", b =>
@@ -43,7 +43,7 @@ namespace Deepflix.Migrations
                     b.Property<int>("Season")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ShowId")
+                    b.Property<int>("Show_id")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Thumbnail")
@@ -60,7 +60,7 @@ namespace Deepflix.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Episodes");
+                    b.ToTable("meu_aplicativo_episode", (string)null);
                 });
 
             modelBuilder.Entity("Show", b =>
@@ -94,7 +94,7 @@ namespace Deepflix.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Shows");
+                    b.ToTable("meu_aplicativo_show", (string)null);
                 });
 
             modelBuilder.Entity("Tag", b =>
@@ -119,7 +119,7 @@ namespace Deepflix.Migrations
 
                     b.HasIndex("VideoId");
 
-                    b.ToTable("Tags");
+                    b.ToTable("meu_aplicativo_tag", (string)null);
                 });
 
             modelBuilder.Entity("Video", b =>
@@ -128,7 +128,7 @@ namespace Deepflix.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ChannelId")
+                    b.Property<int>("Channel_id")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
@@ -163,7 +163,7 @@ namespace Deepflix.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Videos");
+                    b.ToTable("meu_aplicativo_video", (string)null);
                 });
 
             modelBuilder.Entity("Tag", b =>

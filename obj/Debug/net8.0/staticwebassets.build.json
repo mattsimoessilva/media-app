@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7+H9cnvNvRkXiv8q/2Ub/0NVPPB1kaGTEW86OKckzOk=",
+  "Hash": "z+Fi5U4IgXGTKRxxwrnCX1KgKzwkdpGBCQXhxm+5XSs=",
   "Source": "Deepflix",
   "BasePath": "_content/Deepflix",
   "Mode": "Default",
@@ -91,25 +91,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\evolu\\OneDrive\\Documentos\\Estudo\\Deepflix\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
-      "SourceId": "Deepflix",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\evolu\\OneDrive\\Documentos\\Estudo\\Deepflix\\wwwroot\\",
-      "BasePath": "_content/Deepflix",
-      "RelativePath": "css/open-iconic/FONT-LICENSE",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
       "Identity": "C:\\Users\\evolu\\OneDrive\\Documentos\\Estudo\\Deepflix\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
@@ -224,6 +205,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Identity": "C:\\Users\\evolu\\OneDrive\\Documentos\\Estudo\\Deepflix\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "SourceId": "Deepflix",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\evolu\\OneDrive\\Documentos\\Estudo\\Deepflix\\wwwroot\\",
+      "BasePath": "_content/Deepflix",
+      "RelativePath": "css/open-iconic/FONT-LICENSE",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
       "Identity": "C:\\Users\\evolu\\OneDrive\\Documentos\\Estudo\\Deepflix\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
